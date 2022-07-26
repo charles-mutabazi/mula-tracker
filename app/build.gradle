@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -61,4 +62,13 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
     //ROOM DATABASE
+    implementation "androidx.room:room-ktx:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    androidTestImplementation "androidx.room:room-testing:$room_version"
+
+    // COIL for image loading - https://mvnrepository.com/artifact/io.coil-kt/coil-compose-base
+    implementation("io.coil-kt:coil-compose-base:2.1.0")
+
+    //DATASTORE
+    implementation "androidx.datastore:datastore-preferences:1.0.0"
 }
